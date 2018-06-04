@@ -16,7 +16,7 @@ public class Student {
 	private String gradeYear;
 	private Integer studentID;
 	private String courses;
-	private String tuitionBalance;
+	private Integer tuitionBalance;
 	private Integer costOfCourse;
 	
 	// Constructor prompt for student name.
