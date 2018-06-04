@@ -24,22 +24,25 @@ public class Email {
 	private String email;
 	private Integer defaultPasswordLength;
 	private String department;
-	private Integer mailBoxCapacity;
+	private Integer mailBoxCapacity;//The units are in megabytes(MB).
 	private String alternateEmail;
-	private String companySuffix = "company.com";
+	private String companySuffix;
 	
 	//Constructor to receive the first and last name
 	public Email(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.defaultPasswordLength = 16;
+		this.companySuffix = "company.com";
+		this.mailBoxCapacity = 500;
+		
 		//Using a private method to continue the constructor process
 		this. password = randomPassword(this.defaultPasswordLength);
 		this.department = setDepartment();
 		
 		//Next is make email
 		this.email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
-		this.mailBoxCapacity = 12;
+
 		this.alternateEmail = "cats@hotmail.com";
 	}
 	//Ask for the department
@@ -110,6 +113,31 @@ public class Email {
 		}
 		return theChoice;//it is good practice to not have multiple return statements in a single function
 	}
+	
+	public String getPassword() {
+		return password;
+	}
+	//change the password
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Integer getMailBoxCapacity() {
+		return mailBoxCapacity;
+	}
+	//set mailbox capacity
+	public void setMailBoxCapacity(Integer mailBoxCapacity) {
+		this.mailBoxCapacity = mailBoxCapacity;
+	}
+
+	public String getAlternateEmail() {
+		return alternateEmail;
+	}
+	//set alternate email
+	public void setAlternateEmail(String alternateEmail) {
+		this.alternateEmail = alternateEmail;
+	}
+
 	@Override
 	public String toString() {
 		return String.format("%s %s\n %s\n %d\n %s\n %s\n", this.firstName, this.lastName, this.department, this.mailBoxCapacity, this.email, this.password);
