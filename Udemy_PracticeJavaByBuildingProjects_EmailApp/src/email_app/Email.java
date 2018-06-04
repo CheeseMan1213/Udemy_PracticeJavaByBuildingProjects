@@ -21,10 +21,12 @@ public class Email {
 	private String firstName;
 	private String lastName;
 	private String password;
+	private String email;
 	private Integer defaultPasswordLength;
 	private String department;
 	private Integer mailBoxCapacity;
 	private String alternateEmail;
+	private String companySuffix = "company.com";
 	
 	//Constructor to receive the first and last name
 	public Email(String firstName, String lastName) {
@@ -34,6 +36,9 @@ public class Email {
 		//Using a private method to continue the constructor process
 		this. password = randomPassword(this.defaultPasswordLength);
 		this.department = setDepartment();
+		
+		//Next is make email
+		this.email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
 		this.mailBoxCapacity = 12;
 		this.alternateEmail = "cats@hotmail.com";
 	}
@@ -107,6 +112,6 @@ public class Email {
 	}
 	@Override
 	public String toString() {
-		return String.format("%s %s, %s, %d, %s %s", this.firstName, this.lastName, this.department, this.mailBoxCapacity, this.alternateEmail, this.password);
+		return String.format("%s %s\n %s\n %d\n %s\n %s\n", this.firstName, this.lastName, this.department, this.mailBoxCapacity, this.email, this.password);
 	}
 }
