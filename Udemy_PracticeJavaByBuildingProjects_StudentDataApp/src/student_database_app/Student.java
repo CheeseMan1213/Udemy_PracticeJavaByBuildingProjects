@@ -11,5 +11,23 @@ package student_database_app;
 import static java.lang.System.out;
 
 public class Student {
-
+	private String firstName;
+	private String lastName;
+	private String gradeYear;
+	private Integer studentID;
+	private String courses;
+	private String tuitionBalance;
+	private Integer costOfCourse;
+	
+	// Constructor prompt for student name.
+	
+	// Generate ID
+	
+	// Enroll in courses
+	
+	// View balance
+	
+	// Pay tuition
+	
+	// Show status
 }
