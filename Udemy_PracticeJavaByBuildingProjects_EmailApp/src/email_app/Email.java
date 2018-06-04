@@ -140,6 +140,9 @@ public class Email {
 
 	@Override
 	public String toString() {
-		return String.format("%s %s\n %s\n %d\n %s\n %s\n", this.firstName, this.lastName, this.department, this.mailBoxCapacity, this.email, this.password);
+		return String.format("%s %s\n%s\n%s %s\n",
+				this.firstName, this.lastName,
+				this.email,
+				this.mailBoxCapacity, "MB");
 	}
 }
