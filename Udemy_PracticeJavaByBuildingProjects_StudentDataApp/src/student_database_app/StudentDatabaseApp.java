@@ -9,11 +9,12 @@
 
 package student_database_app;
 
+import static java.lang.System.out;
+
 public class StudentDatabaseApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Student student_1 = new Student();
+		out.printf("%s%n",student_1.toString());
 	}
-
 }
